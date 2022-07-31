@@ -52,9 +52,8 @@ function Cart(props) {
     }
     const handleSubmit = (event) => {
         const target = event.target;
-        alert(target);
-        console.log(target)
         emailjs.sendForm('gmail', 'template_food', target, 'tTZgK80dCV-FMhGZA')
+        alert("Thanks for your order ! \n" + "We will ship this order to your address within 3-7 days! Please note the phone number when the delivery staff calls!");
     }
     const handleBlur = (event) => {
         props.handleBlur(event.target.name);
