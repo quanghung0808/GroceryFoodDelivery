@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import MenuFood from './smallComponents/MenuFood';
 import MenuHeader from './smallComponents/MenuHeader';
 import { connect } from 'react-redux';
 
 function Menu(props) {
+
+    useEffect(() => {
+        if (props.search === '') {
+            window.scrollTo(0, 0);
+        }
+        else window.scrollTo(0, 650);
+    }, [])
 
     return (
         <div>
@@ -16,7 +23,8 @@ function Menu(props) {
 const mapStateToProps = (state) => {
     return {
         food: state.food,
-        category: state.category
+        category: state.category,
+        search: state.search
     }
 }
 export default connect(mapStateToProps)(Menu);

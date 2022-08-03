@@ -46,3 +46,9 @@ export const loadCurrentItem = (item) => {
         payload: item
     }
 };
+
+export const clearSearch = () => {
+    return {
+        type: ActionTypes.CLEAR_SEARCH,
+    }
+};

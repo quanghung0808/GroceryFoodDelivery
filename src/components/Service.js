@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 function Service(props) {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
+
     return (
         <section className="_service_grover_grocery_wrapper">
             <div className="_service_grover_grocery_wrap">
@@ -22,7 +26,7 @@ function Service(props) {
                                             <div className="_service_grover_grocery_content_bg"></div>
                                             <div className="_service_grover_grocery_content">
                                                 <div className="_service_grover_grocery_content_ic">
-                                                    <img src="assets/images/service-ic1.svg" alt="Image" class="_service_grover_grocery_content_img"/>
+                                                    <img src="assets/images/service-ic1.svg" alt="Image" class="_service_grover_grocery_content_img" />
                                                 </div>
                                                 <div className="_service_grover_grocery_content_txt">
                                                     <h3 className="_service_grover_grocery_content_title">Free shipping</h3>
@@ -36,7 +40,7 @@ function Service(props) {
                                             <div className="_service_grover_grocery_content_bg"></div>
                                             <div className="_service_grover_grocery_content">
                                                 <div className="_service_grover_grocery_content_ic">
-                                                    <img src="assets/images/service-ic2.svg" alt="Image" className="_service_grover_grocery_content_img"/>
+                                                    <img src="assets/images/service-ic2.svg" alt="Image" className="_service_grover_grocery_content_img" />
                                                 </div>
                                                 <div className="_service_grover_grocery_content_txt">
                                                     <h3 className="_service_grover_grocery_content_title">15 days returns</h3>
@@ -50,12 +54,12 @@ function Service(props) {
                                             <div className="_service_grover_grocery_content_bg"></div>
                                             <div className="_service_grover_grocery_content">
                                                 <div className="_service_grover_grocery_content_ic">
-                                                    <img src="assets/images/service-ic3.svg" alt="Image" className="_service_grover_grocery_content_img"/>
+                                                    <img src="assets/images/service-ic3.svg" alt="Image" className="_service_grover_grocery_content_img" />
                                                 </div>
                                                 <div className="_service_grover_grocery_content_txt">
                                                     <h3 className="_service_grover_grocery_content_title">Secure checkout</h3>
                                                     <p className="_service_grover_grocery_content_para">If you get rotten items - return immediately to us.</p>
-                                                </div> 
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

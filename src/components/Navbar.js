@@ -2,18 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-function Navbar({cart}) {
+function Navbar({ cart}) {
     const [activeMenu, setActiveMenu] = useState('home');
     const [cartCount, setCartCount] = useState(0);
-
     useEffect(() => {
-        let count=0;
-        cart.forEach(item => {
+        let count = 0;
+        cart?.forEach(item => {
             count += item.qty;
         });
-
         setCartCount(count);
-    },[cart, cartCount])
+    }, [cart, cartCount])
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light _grover_grocery_navbar fixed-top ">
             <div className="container">
@@ -53,25 +52,10 @@ function Navbar({cart}) {
                                 Service
                             </Link>
                         </li>
-                        {/* <li className="nav-item _grover_grocery_list_item">
-                            <Link
-                                aria-current="page"
-                                to="/shop"
-                                className={activeMenu === 'shop' ? 'nav-link _active _grover_grocery_list_link' : 'nav-link _grover_grocery_list_link'}
-                                onClick={() => setActiveMenu("shop")} >
-                                Shop
-                            </Link>
-                        </li> */}
                     </ul>
                     <ul className="_search_btn_list">
                         <li className="_search_btn_list_item">
-                            <form className="_nav_search_form">
-                                <span className="_search_ic">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewbox="0 0 16 16">
-                                        <path fill="#8B8B8B" d="M15.212 14.573l-3.808-3.96A6.44 6.44 0 0012.92 6.46 6.467 6.467 0 006.46 0 6.467 6.467 0 000 6.46a6.467 6.467 0 006.46 6.46 6.39 6.39 0 003.701-1.169l3.837 3.99a.838.838 0 001.191.023.844.844 0 00.023-1.19zM6.46 1.685a4.78 4.78 0 014.775 4.775 4.78 4.78 0 01-4.775 4.775A4.78 4.78 0 011.685 6.46 4.78 4.78 0 016.46 1.685z" />
-                                    </svg>
-                                </span>
-                                <input className="_nav_search_input" type="text" placeholder="Search" />
+                            <div className="_nav_search_form">
                                 <Link to="/cart">
                                     <span className="_cart_ic">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewbox="0 0 24 24">
@@ -81,7 +65,7 @@ function Navbar({cart}) {
                                     </span>
                                     <span className='cartAmount'>{cartCount}</span>
                                 </Link>
-                            </form>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -95,4 +79,5 @@ const mapStateToProps = (state) => {
         cart: state.cart,
     };
 }
+
 export default connect(mapStateToProps)(Navbar);

@@ -9,7 +9,6 @@ import { handleBlur, handleInputChange } from '../store/ActionCreater';
 function Cart(props) {
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalItems, setTotalItems] = useState(0);
-
     useEffect(() => {
         let items = 0;
         let price = 0;
@@ -20,6 +19,7 @@ function Cart(props) {
         })
         setTotalPrice(price);
         setTotalItems(items);
+            window.scrollTo(0, 0);
     }, [props.cart, totalPrice, totalItems, setTotalItems, setTotalPrice])
 
     const validate = (name, email, telnum, address) => {

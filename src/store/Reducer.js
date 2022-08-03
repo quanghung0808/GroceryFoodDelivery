@@ -11,6 +11,11 @@ export const Reducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 [a]: action.value
             }
+        case ActionTypes.CLEAR_SEARCH:
+            return {
+                ...state,
+                search: ''
+            }
         case ActionTypes.HANDLE_BLUR:
             const field = action.name;
             return {

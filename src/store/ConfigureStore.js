@@ -25,7 +25,8 @@ export const INITIAL_STATE = {
     category: Category,
     food: Food,
     cart: [],
-    currentItem: null
+    currentItem: null,
+    search: ''
 }
 export const configureStore = () => {
     const store = createStore(Reducer, INITIAL_STATE);
