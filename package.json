@@ -19,7 +19,6 @@
     "redux": "^4.2.0",
     "web-vitals": "^2.1.4"
   },
-
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
@@ -44,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "json-server": "^0.17.0"
   }
 }
