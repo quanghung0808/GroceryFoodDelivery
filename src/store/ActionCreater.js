@@ -52,3 +52,9 @@ export const clearSearch = () => {
         type: ActionTypes.CLEAR_SEARCH,
     }
 };
+export const addComment = (text) => {
+    return {
+        type: ActionTypes.ADD_COMMENT,
+        payload: text
+    }
+};

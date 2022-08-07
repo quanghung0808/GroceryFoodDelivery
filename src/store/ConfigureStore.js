@@ -1,15 +1,17 @@
-import { useState } from "react";
 import { createStore } from "redux"
-// import { Food } from "../shared/food";
-import { fetchCategory, fetchFood } from "../utils/FetchFood";
+import { fetchCategory, fetchFood, fetchComment } from "../utils/FetchAPI";
 import { Reducer } from './Reducer'
 const Food = [];
 fetchFood().then(value => value.map((i) => {
     Food.push(i);
 }));
 const Category = [];
-fetchCategory().then(value => value.map((i) =>{
+fetchCategory().then(value => value.map((i) => {
     Category.push(i);
+}));
+const Comment = [];
+fetchComment().then(value => value.map((i) => {
+    Comment.push(i);
 }));
 export const INITIAL_STATE = {
     name: '',
@@ -24,9 +26,10 @@ export const INITIAL_STATE = {
     },
     category: Category,
     food: Food,
+    comment: Comment,
     cart: [],
     currentItem: null,
-    search: ''
+    search: '',
 }
 export const configureStore = () => {
     const store = createStore(Reducer, INITIAL_STATE);

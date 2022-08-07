@@ -11,3 +11,9 @@ export const fetchCategory = async () => {
         .then(response => response.json());
     return await category;
 };
+
+export const fetchComment = async () => {
+    const comment = fetch(baseUrl + 'comments')
+        .then(response => response.json());
+    return await comment;
+};

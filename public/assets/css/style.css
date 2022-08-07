@@ -1502,6 +1502,15 @@ a {
   border-radius: 1rem;
   border: transparent;
 }
+.cardComment {
+  margin-top: 5px !important;
+  margin: auto;
+  max-width: 1300px;
+  width: 121%;
+  box-shadow: 0 6px 20px 0 rgb(0 0 0 / 19%);
+  border-radius: 1rem;
+  border: transparent;
+}
 @media (max-width: 767px) {
   .card {
     margin: 3vh auto;
@@ -1637,9 +1646,7 @@ input:focus::-webkit-input-placeholder {
   font-size: 1.5rem;
 }
 .wrapper {
-  height: 500px;
-  width: 900px;
-  margin: 200px auto;
+  margin-top: 125px;
   border-radius: 7px 7px 7px 7px;
   /* VIA CSS MATIC https://goo.gl/cIbnS */
   -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
@@ -1778,4 +1785,20 @@ input:focus::-webkit-input-placeholder {
 .priceWeight {
   font-size: 18px !important;
   margin-left: 111px;
+}
+
+.detailFood {
+  margin-left: 15%;
+}
+
+.autoMargin {
+  margin: 0px 80px;
+}
+
+.addBtn {
+  width: 100%;
+}
+
+.cm {
+  padding-bottom: 20px;
 }

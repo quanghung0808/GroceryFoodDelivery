@@ -53,6 +53,13 @@ export const Reducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 currentItem: action.payload
             }
+        case ActionTypes.ADD_COMMENT:
+            console.log(action.payload);
+            console.log('sent to redux')
+            return {
+                ...state,
+                comment: state.comment.concat(action.payload)
+            }
         default:
             return state;
     }
