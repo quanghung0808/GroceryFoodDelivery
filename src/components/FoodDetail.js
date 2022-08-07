@@ -18,14 +18,15 @@ function FoodDetail(props) {
     }, [])
 
     const handleSubmit = (id) => {
-        const newComment = {
-            id: props.comments?.length,
-            foodId: id,
-            comment: cm,
+        if (cm !== "") {
+            const newComment = {
+                id: props.comments?.length,
+                foodId: id,
+                comment: cm,
+            }
+            addComment(newComment);
+            setCm('');
         }
-        addComment(newComment);
-        setCm('');
-        return false;
     }
     const addComment = (newComment) => {
         return fetch(baseUrl + 'comments', {
@@ -92,6 +93,7 @@ function FoodDetail(props) {
                                         value={cm}
                                         onChange={handleInputChange}
                                         placeholder='Comment'
+                                        required
                                     />
                                 </div>
                                 <div className='col col-md-2'>
